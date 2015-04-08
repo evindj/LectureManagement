@@ -1,0 +1,36 @@
+﻿
+
+<div class="container">
+    <form role="form" name="uploadForm" class="form-horizontal">
+        <fieldset>
+            <legend>Category</legend>
+            <div class="form-group" ng-class="{'has-error':uploadForm.category.$invalid}">
+                <label class="col-sm-3 control-label" for="lecture">choose your category</label>
+                <div class="col-sm-9">
+                    <select id="category" ng-model="category" ng-options="cat.Title for cat in categories" ng-required="true" name="category"></select>
+                    <span class="help-block" ng-show="uploadForm.category.$error.required">Category is required</span>
+                </div>
+            </div>
+
+        </fieldset>
+        <fieldset>
+            <legend>Course Information</legend>
+            <div class="form-group" ng-class="{'has-error':uploadForm.lecture.$invalid uploadForm.category.$dirty}">
+                <label class="col-sm-3 control-label" for="lecture">Upload your lecture</label>
+                <div class="col-sm-9">
+                    <input type="file" ng-file-select="onFileSelect($files)" ng-multiple=" false" accept="*.*" id=" lecture" name="lecture" class="form-control" ng-required="true" />
+                </div>
+                <span class="help-block" ng-show="uploadForm.lecture.$error.required">File upload is required</span>
+            </div>
+            <div class="col-sm-3">
+
+             <progressbar animate="true" value="dynamic" class="progress-striped active" type="success" ng-show="isUploading"  >{{dynamic}}%</progressbar>
+            </div>
+           
+
+        </fieldset>
+        <div class="col-sm-offset-3 col-sm-9">
+            <input type="submit" class="btn btn-default" ng-click="submitForm()" value="Submit" />
+        </div>
+    </form>
+</div>

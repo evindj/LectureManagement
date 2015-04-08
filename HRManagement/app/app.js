@@ -1,0 +1,1 @@
+﻿var angularModule = angular.module('angularModule', ['ngRoute', 'angularFileUpload','ui.bootstrap']);

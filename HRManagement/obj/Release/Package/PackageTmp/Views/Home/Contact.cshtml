@@ -1,0 +1,62 @@
+﻿@{
+    ViewBag.Title = "Contact";
+}
+
+    <h2 class="center1">Contact Us</h2>
+
+
+<section id="content" class="shortcode-item">
+    <div class="container">
+        <div class=" col-md-12 row ">
+            <form class="form-horizontal" method="POST">
+                <fieldset>
+                    <div class="form-group">
+                        <label class="control-label col-md-2" for="name">Name</label>
+                        <div class="col-md-10">
+                            <input type="text" class="form-control" id="name" name="name" data-val="true" data-val-required="*">
+                            <span class="field-validation-valid" data-valmsg-for="name" data-valmsg-replace="true"></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-2" for="email">Email</label>
+                        <div class="col-md-10">
+                            <input type="text" class="form-control" id="email" name="email" data-val="true" data-val-email=" Not Valid" data-val-required="*">
+                            <span class="field-validation-valid" data-valmsg-for="email" data-valmsg-replace="true"></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-2" for="website">Website</label>
+                        <div class="col-md-10">
+                            <input type="text" class="form-control" id="website" name="website" data-val="true" data-val-required="*">
+                            <span class="field-validation-valid" data-valmsg-for="website" data-valmsg-replace="true"></span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-md-2" for="comment">Message</label>
+                        <div class="col-md-10">
+                            <textarea class="form-control" id="comment" rows="3" name="comment" data-val="true" data-val-required="*"></textarea>
+                            <span class="field-validation-valid" data-valmsg-for="comment" data-valmsg-replace="true"></span>
+                        </div>
+                    </div>
+                    <div class="form-actions">
+                        <button class="btn btn-success form-actions" type="submit">Send</button>
+
+                        @if (ViewBag.MailSent != null && ViewBag.MailSent)
+                        {
+                            <div>Mail Sent</div>
+                        }
+
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</section>
+
+
+@section scripts{
+    
+<script src="~/Scripts/jquery.js"></script>
+<script src="~/Scripts/jquery.validate.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+}

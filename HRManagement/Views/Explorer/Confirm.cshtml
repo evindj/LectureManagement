@@ -1,0 +1,28 @@
+﻿
+@{
+    ViewBag.Title = "Confirm";
+   
+}
+<div class="container">
+
+    <h2>Confirm</h2>
+    <div>
+        Thank you for taking your time to register for the program.  You’ll receive an email shortly (give us 30 min approximately) to confirm your account as well as information on how to get started.
+    </div>
+
+    <div >
+
+        <a class="btn btn-primary" href="~/">Back</a>
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jquery");
+    @Scripts.Render("~/bundles/jqueryval");
+    @Scripts.Render("~/bundles/bootstrap");
+    <script type="text/javascript">
+
+    $('#myModal').modal('show');
+    </script>
+
+}

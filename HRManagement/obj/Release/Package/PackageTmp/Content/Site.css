@@ -1,0 +1,11 @@
+﻿.center1 {
+    text-align: center;
+}
+
+.imgBox { } 
+.imgBox:hover { -moz-box-shadow: 0 0 10px #ccc; -webkit-box-shadow: 0 0 10px #ccc; box-shadow: 0 0 10px #ccc; }
+
+.form-group .form-control  input{
+
+    width:50%;
+}

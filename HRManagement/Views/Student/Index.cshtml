@@ -1,0 +1,71 @@
+﻿@{
+    ViewBag.Title = "Student Page";
+}
+@section featured {
+
+}
+
+<div style="margin-bottom:25px" class="container" ng-controller="studentDashboardController">
+    <div ng-show="isHome">
+        <div class="row">
+            <div class="col-md-3 col-sm-6" style="margin-top: 30px;" ng-repeat="l in firstRow">
+                <div style="height: 162px;">
+                    <img ng-click="openLecture($index)" class="imgBox" style="cursor: pointer" src="../../Content/images/video2.jpg" />
+                </div>
+                <div style="height: 80px; background-color: #ff8c00">
+                    <p>
+                        <a href="#" ng-click="openLecture($index)" class="lead">{{l.Title}}</a>
+                    </p>
+
+                    <div class="fa fa-lightbulb-o pull-right"> by mister J</div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+    <div ng-show="isLecture">
+
+        <div class="row">
+            <div class="col-md-9 col-sm-6">
+                <!--video space-->
+                <video id="videoPlayer" preload="auto" class="col-md-12 col-sm-6" style="margin-top:10px"  controls  autoplay>
+                    <source ng-src="{{source}}" type="video/mp4">
+                    video not supported
+                </video>
+                
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <!-- playlist part-->
+
+                <div ng-repeat=" mod in modules">
+                    <h4>{{mod.Title}}</h4>
+                    <div ng-repeat=" vid in mod.Videos">
+                        <h5 style="cursor:pointer" ng-click="videoClick($index,$parent.$index)">{{vid.Title}}</h5>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+        </div>
+
+    </div>
+
+
+
+</div>
+@section scripts {
+    <script src="~/Scripts/js/jquery.js"></script>
+    <script src="~/Scripts/js/bootstrap.min.js"></script>
+    <script src="~/Scripts/js/jquery.prettyPhoto.js"></script>
+    <script src="~/Scripts/js/jquery.isotope.min.js"></script>
+    <script src="~/Scripts/js/main.js"></script>
+    <script src="~/Scripts/js/wow.min.js"></script>
+    
+<script src="~/app/controller/studentDashboardController.js"></script>
+<script src="~/app/Services/studentDashboardService.js"></script>
+
+}
